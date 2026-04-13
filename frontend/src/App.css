@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  background: linear-gradient(to right, #113124, #2d6a4f);
+  font-family: Arial, sans-serif;
+}
+.navbarcustomize{
+  background: linear-gradient(to right, #113124, #1d4f38);
+  color: white;
+  padding: 10px 0;
+}
+.navbarcustomize .btn {
+  margin: 0 5px;
+}
+.btncustom{
+  background: linear-gradient(to right, #358163, #1d4f38);
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+
+
+.cardcustomize h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+
+
+
+.tablecustomize {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+.tablecustomize thead th {
+  background-color: #ddd;
+  color: rgb(57, 57, 57);
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+.tablecustomize tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+.tablecustomize tbody td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.tablecustomize .btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+
+
+.form-control,
+.form-select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: #2a7d4e;
+  outline: none;
+}
