@@ -4,8 +4,8 @@ const router = express.Router();
 router.get("/",async (req,res)=>{
     try{
         const db = req.app.locals.db;
-        const page= parseInt(req.query.page) || 1;
-        const pageSize = parseInt(req.query.pageSize) || 10;
+        const page= parseInt(req.query.page);
+        const pageSize = parseInt(req.query.pageSize);
         const offset = (page-1)*pageSize;
         const [rows]=await db.query("select p.productid,p.productname,c.categoryid,categoryname from product p join category c on p.categoryid = c.categoryid ORDER BY p.productid ASC limit ? offset ?",[pageSize,offset]);
         res.json(rows);

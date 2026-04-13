@@ -18,14 +18,10 @@ body {
 }
 
 
-
-
 .cardcustomize h3 {
   color: #333;
   margin-top: 0;
 }
-
-
 
 
 .tablecustomize {
@@ -51,7 +47,6 @@ body {
   padding: 5px 10px;
   font-size: 12px;
 }
-
 
 
 .form-control,

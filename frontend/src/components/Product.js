@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import API from "../api";
 
 function Product() {
-    const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [name, setName] = useState("");
-    const [categoryId, setCategoryId] = useState("");
-    const [editId, setEditId] = useState(null);
-    const [page, setPage] = useState(1);
+    const [products,setProducts]= useState([]);
+    const [categories,setCategories]= useState([]);
+    const [name,setName]=useState("");
+    const [categoryId,setCategoryId] = useState("");
+    const [editId,setEditId]=useState(null);
+    const [page, setPage] =useState(1);
     const pageSize = 10;
 
-    const fetchProducts = async () => {
+    const fetchProducts = async ()=>{
         const res = await API.get(`/product?page=${page}&pageSize=${pageSize}`);
         setProducts(res.data);
     };
 
-    const fetchCategories = async () => {
+    const fetchCategories = async ()=>{
         const res = await API.get("/category");
         setCategories(res.data);
     };
@@ -41,19 +41,19 @@ function Product() {
         fetchProducts();
     };
 
-    const deleteProduct = async (id) => {
+    const deleteProduct = async (id)=>{
         if (!window.confirm("Delete this product?")) return;
         await API.delete(`/product/${id}`);
         fetchProducts();
     };
 
-    const editProduct = (p) => {
+    const editProduct = (p)=>{
         setName(p.productname);
         setCategoryId(p.categoryid);
         setEditId(p.productid);
     };
 
-    useEffect(() => {
+    useEffect(()=>{
         fetchProducts();
         fetchCategories();
     }, [page]);
@@ -62,19 +62,16 @@ function Product() {
         <div className="container mt-4">
             <div className="card p-3">
                 <h3>Product Master</h3>
-
                 <div className="d-flex gap-2 mb-3">
                     <input
                         className="form-control"
                         placeholder="Product name"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
+                        onChange={(e) => setName(e.target.value)}/>
                     <select
                         className="form-control"
                         value={categoryId}
-                        onChange={(e) => setCategoryId(e.target.value)}
-                    >
+                        onChange={(e) => setCategoryId(e.target.value)}>
                         <option value="">Select Category</option>
                         {categories.map((c) => (
                             <option key={c.categoryid} value={c.categoryid}>
@@ -97,6 +94,8 @@ function Product() {
                         </button>
                     )}
                 </div>
+
+
                 <table className="table">
                     <thead>
                         <tr>
